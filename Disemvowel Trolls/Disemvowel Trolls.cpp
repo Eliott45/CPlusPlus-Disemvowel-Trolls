@@ -1,19 +1,12 @@
 #include <iostream>
 #include <string>
-#include <cstring>
+#include <regex>
 
 using namespace std;
 
 string disemvowel(const string& str) {
-    string res;
-    for (auto c : str)
-    {
-        if (!strchr("aeiouAEIOU", c))
-        {
-            res += c;
-        }
-    }
-    return res;
+    regex vowels("[aeiouAEIOU]");
+    return regex_replace(str, vowels, "");
 }
 
 
